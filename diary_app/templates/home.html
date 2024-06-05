@@ -1,0 +1,107 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block additional_style %}
+     <link rel="stylesheet" href="{% static 'css/home.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="block">
+    <h2>Понедельник</h2>
+    <hr>
+    {% if exercises1 %}
+        {% for exercise in exercises1 %}
+        <div class="one-article-header flex full-width">
+            <div>{{ exercise.exercise_id }}</div>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="full-width article-no-post">Нет упражнений в этот день</div>
+    {% endif %}
+</div>
+
+<div class="block">
+    <h2>Вторник</h2>
+    <hr>
+    {% if exercises2 %}
+        {% for exercise2 in exercises2 %}
+        <div class="one-article-header flex full-width">
+            <h4>{{ exercise2.exercise_id }}</h4>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="full-width article-no-post">Нет упражнений в этот день</div>
+    {% endif %}
+</div>
+
+<div class="block">
+    <h2>Среда</h2>
+    <hr>
+    {% if exercises3 %}
+        {% for exercise3 in exercises3 %}
+        <div class="one-article-header flex full-width">
+            <h4>{{ exercise3.exercise_id }}</h4>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="full-width article-no-post">Нет упражнений в этот день</div>
+    {% endif %}
+</div>
+
+<div class="block">
+    <h2>Четверг</h2>
+    <hr>
+    {% if exercises4 %}
+        {% for exercise4 in exercises4 %}
+        <div class="one-article-header flex full-width">
+            <h4>{{ exercise4.exercise_id }}</h4>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="full-width article-no-post">Нет упражнений в этот день</div>
+    {% endif %}
+</div>
+
+<div class="block">
+    <h2>Пятница</h2>
+    <hr>
+    {% if exercises5 %}
+        {% for exercise5 in exercises5 %}
+        <div class="one-article-header flex full-width">
+            <h4>{{ exercise5.exercise_id }}</h4>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="full-width article-no-post">Нет упражнений в этот день</div>
+    {% endif %}
+</div>
+
+<div class="block">
+    <h2>Суббота</h2>
+    <hr>
+    {% if exercises6 %}
+        {% for exercise6 in exercises6 %}
+        <div class="one-article-header flex full-width">
+            <h4>{{ exercise6.exercise_id }}</h4>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="full-width article-no-post">Нет упражнений в этот день</div>
+    {% endif %}
+</div>
+
+<div class="block">
+    <h2>Воскресенье</h2>
+    <hr>
+    {% if exercises7 %}
+        {% for exercise7 in exercises7 %}
+        <div class="one-article-header flex full-width">
+            <h4>{{ exercise7.exercise_id }}</h4>
+        </div>
+        {% endfor %}
+    {% else %}
+        <div class="full-width article-no-post">Нет упражнений в этот день</div>
+    {% endif %}
+</div>
+
+{% endblock %}

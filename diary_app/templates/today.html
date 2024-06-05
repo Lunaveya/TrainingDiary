@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block additional_style %}
+     <link rel="stylesheet" href="{% static 'css/today.css' %}">
+{% endblock %}
+
+{% block content %}
+<div class="block">
+    <h2>{{ name_day }}</h2>
+    <hr>
+    {% if dones %}
+        {% for done in dones %}
+        <div class="one-article-header flex full-width">
+            <div class="block">{{ done.exercise_id }}
+                <form method="POST" class="full-width flex">
+                    {% csrf_token %}
+                    {{ form }}
+                    <button type="submit">Сохранить</button>
+                </form>
+            </div>
+        </div>
+
+        {% endfor %}
+    {% else %}
+        <div class="full-width article-no-post">Нет упражнений в этот день</div>
+    {% endif %}
+
+</div>
+{% endblock %}
+
+
+
+
+
+
+
+<!--<div class="block">-->
+<!--    <h3>Комментарии {{ comments_count }}</h3>-->
+<!--    <hr>-->
+<!--    {% if comments %}-->
+<!--    {% for comment in comments %}-->
+<!--    <div class="article-comment full-width">-->
+<!--        {{ comment.text }}-->
+<!--        <div class="article-comment-info flex full-width">-->
+<!--            <div class="one-main-post-date">-->
+<!--                <i class="fa-solid fa-calendar"></i> {{ comment.decorate_date }}-->
+<!--                <i class="fa-solid fa-user"></i> {{ comment.user_id }}-->
+<!--            </div>-->
+<!--        </div>-->
+<!--    </div>-->
+<!--    {% endfor %}-->
+<!--    {% else %}-->
+<!--    <div class="full-width article-no-comments">-->
+<!--        Нет комментариев-->
+<!--    </div>-->
+<!--    {% endif %}-->
+<!--</div>-->
+
